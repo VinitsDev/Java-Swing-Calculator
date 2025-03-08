@@ -10,13 +10,16 @@ package com.practice.vinicius;
  */
 public class CalculatorScreen extends javax.swing.JFrame {
 
+    Integer n1;
+    Integer n2;
+    String operand;
+    
     /**
      * Creates new form CalculatorScreen
      */
     public CalculatorScreen() {
         initComponents();
-        int n1 = 0;
-        int n2 = 0;
+
     }
 
     /**
@@ -267,82 +270,131 @@ public class CalculatorScreen extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtResult.setText("");
+        n1 = 0;
+        n2 = 0;
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"1");
-        
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"2");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"3");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"4");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"5");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"6");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"7");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"8");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"9");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
         // TODO add your handling code here:
         txtResult.setText(txtResult.getText()+"0");
+        n1 = Integer.valueOf(txtResult.getText());
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btnSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumActionPerformed
         // TODO add your handling code here:
-        txtResult.setText(txtResult.getText()+"+");
+        n2 = n1;
+        n1= 0;
+        operand = "+";
+        txtResult.setText("");
     }//GEN-LAST:event_btnSumActionPerformed
 
     private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
         // TODO add your handling code here:
-        txtResult.setText(txtResult.getText()+"-");
+        n2 = n1;
+        n1= 0;
+        operand = "-";
+        txtResult.setText("");
     }//GEN-LAST:event_btnMinusActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
         // TODO add your handling code here:
-        txtResult.setText(txtResult.getText()+"x");
+        n2 = n1;
+        n1= 0;
+        operand = "x";
+        txtResult.setText("");
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
         // TODO add your handling code here:
-        txtResult.setText(txtResult.getText()+"/");
+        n2 = n1;
+        n1= 0;
+        operand = "/";
+        txtResult.setText("");
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
         // TODO add your handling code here:
-        
+        switch (operand) {
+            case "+":
+                {
+                    Integer r = n2+n1;
+                    txtResult.setText(n2.toString()+"+"+n1.toString()+"="+r.toString());
+                    break;
+                }
+            case "-":
+                {
+                    Integer r = n2-n1;
+                    txtResult.setText(n2.toString()+"-"+n1.toString()+"="+r.toString());
+                    break;
+                }
+            case "x":
+                {
+                    Integer r = n2*n1;
+                    txtResult.setText(n2.toString()+"x"+n1.toString()+"="+r.toString());
+                    break;
+                }
+            case "/":
+                {
+                    Integer r = n2/n1;
+                    txtResult.setText(n2.toString()+"/"+n1.toString()+"="+r.toString());
+                }
+            default:
+                break;
+        }
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     /**
