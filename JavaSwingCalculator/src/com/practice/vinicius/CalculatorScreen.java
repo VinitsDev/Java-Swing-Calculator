@@ -15,6 +15,8 @@ public class CalculatorScreen extends javax.swing.JFrame {
      */
     public CalculatorScreen() {
         initComponents();
+        int n1 = 0;
+        int n2 = 0;
     }
 
     /**
@@ -42,39 +44,89 @@ public class CalculatorScreen extends javax.swing.JFrame {
         btnMult = new javax.swing.JButton();
         btnMinus = new javax.swing.JButton();
         btnDiv = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtResult = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btn3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn3.setText("3");
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
 
         btn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn1.setText("1");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
         btn4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn4.setText("4");
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
 
         btn7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn7.setText("7");
+        btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn7ActionPerformed(evt);
+            }
+        });
 
         btn6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn6.setText("6");
+        btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn6ActionPerformed(evt);
+            }
+        });
 
         btn2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn2.setText("2");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         btn8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn8.setText("8");
+        btn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn8ActionPerformed(evt);
+            }
+        });
 
         btn9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn9.setText("9");
+        btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn9ActionPerformed(evt);
+            }
+        });
 
         btn5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn5.setText("5");
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
 
         btn0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn0.setText("0");
+        btn0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn0ActionPerformed(evt);
+            }
+        });
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnClear.setText("CLEAR");
@@ -86,21 +138,46 @@ public class CalculatorScreen extends javax.swing.JFrame {
 
         btnCalculate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCalculate.setText("=");
+        btnCalculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateActionPerformed(evt);
+            }
+        });
 
         btnSum.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSum.setText("+");
+        btnSum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumActionPerformed(evt);
+            }
+        });
 
         btnMult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnMult.setText("x");
+        btnMult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultActionPerformed(evt);
+            }
+        });
 
         btnMinus.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnMinus.setText("-");
+        btnMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMinusActionPerformed(evt);
+            }
+        });
 
         btnDiv.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDiv.setText("/");
+        btnDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jTextField1.setText("0");
+        txtResult.setEditable(false);
+        txtResult.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,7 +186,7 @@ public class CalculatorScreen extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
+                    .addComponent(txtResult)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -155,7 +232,7 @@ public class CalculatorScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -189,7 +266,84 @@ public class CalculatorScreen extends javax.swing.JFrame {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
+        txtResult.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"1");
+        
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"2");
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"3");
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"4");
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"5");
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"6");
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"7");
+    }//GEN-LAST:event_btn7ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"8");
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"9");
+    }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"0");
+    }//GEN-LAST:event_btn0ActionPerformed
+
+    private void btnSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"+");
+    }//GEN-LAST:event_btnSumActionPerformed
+
+    private void btnMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"-");
+    }//GEN-LAST:event_btnMinusActionPerformed
+
+    private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"x");
+    }//GEN-LAST:event_btnMultActionPerformed
+
+    private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
+        // TODO add your handling code here:
+        txtResult.setText(txtResult.getText()+"/");
+    }//GEN-LAST:event_btnDivActionPerformed
+
+    private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnCalculateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,6 +397,6 @@ public class CalculatorScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnMinus;
     private javax.swing.JButton btnMult;
     private javax.swing.JButton btnSum;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtResult;
     // End of variables declaration//GEN-END:variables
 }
