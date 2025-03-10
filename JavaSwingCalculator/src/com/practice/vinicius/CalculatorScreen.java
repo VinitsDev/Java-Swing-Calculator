@@ -373,28 +373,33 @@ public class CalculatorScreen extends javax.swing.JFrame {
                 {
                     Integer r = n2+n1;
                     txtResult.setText(n2.toString()+"+"+n1.toString()+"="+r.toString());
+                    n1 = r;
                     break;
                 }
             case "-":
                 {
                     Integer r = n2-n1;
                     txtResult.setText(n2.toString()+"-"+n1.toString()+"="+r.toString());
+                    n1 = r;
                     break;
                 }
             case "x":
                 {
                     Integer r = n2*n1;
                     txtResult.setText(n2.toString()+"x"+n1.toString()+"="+r.toString());
+                    n1 = r;
                     break;
                 }
             case "/":
                 {
                     Integer r = n2/n1;
                     txtResult.setText(n2.toString()+"/"+n1.toString()+"="+r.toString());
+                    n1 = r;
                 }
             default:
                 break;
         }
+        
     }//GEN-LAST:event_btnCalculateActionPerformed
 
     /**
